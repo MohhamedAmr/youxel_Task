@@ -29,8 +29,6 @@ public class SuggestionSearchTest extends WebTestBase {
     @Test()
     public void verifyAsYouTypeSuggestionFunc() {
         homePage = new HomePage(webDriver);
-        homePage.clickDismissPopupButton();
-        homePage.clickAcceptCookiesBtn();
         homePage.sendSearchText(searchKeyword);
         assertOnSuggestionsTextList();
         homePage.clickDismissSearchBarButton();

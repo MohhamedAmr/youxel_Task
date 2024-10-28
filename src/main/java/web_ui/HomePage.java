@@ -42,7 +42,7 @@ public class HomePage extends WebPageBase {
 
     public void clickDismissPopupButton() {
         try {
-            new ExplicitDriverWait(webDriver).waitUntilElementAppear(2, dismissPopupButton);
+            new ExplicitDriverWait(webDriver).waitUntilElementAppear(10, dismissPopupButton);
             if (webDriver.findElement(dismissPopupButton).isDisplayed()) {
                 webDriver.findElement(dismissPopupButton).click();
             }
@@ -54,7 +54,7 @@ public class HomePage extends WebPageBase {
 
     public void clickAcceptCookiesBtn() {
         try {
-            new ExplicitDriverWait(webDriver).waitUntilElementAppear(1, acceptCookiesBtn);
+            new ExplicitDriverWait(webDriver).waitUntilElementAppear(10, acceptCookiesBtn);
             if (webDriver.findElement(acceptCookiesBtn).isDisplayed()) {
                 webDriver.findElement(acceptCookiesBtn).click();
             }
@@ -66,6 +66,11 @@ public class HomePage extends WebPageBase {
     public void clickDismissSearchBarButton() {
         new ExplicitDriverWait(webDriver).waitUntilElementAppear(10, dismissSearchBarButton);
         webDriver.findElement(dismissSearchBarButton).click();
+    }
+
+    public void dismissInitialPopups(){
+        clickDismissPopupButton();
+        clickAcceptCookiesBtn();
     }
 
 }

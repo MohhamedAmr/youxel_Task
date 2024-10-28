@@ -17,14 +17,13 @@ public class SearchWithFilterTest extends WebTestBase {
     String minPriceStr = "20000";
     String maxPriceStr = "85000";
 
+
     @Description("This test attempts to Search with keyword and combining filters such as price and brand")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
     public void searchWithFilters() {
-        homePage = new HomePage(webDriver);
         searchPage = new SearchPage(webDriver);
-        homePage.clickDismissPopupButton();
-        homePage.clickAcceptCookiesBtn();
+        homePage = new HomePage(webDriver);
         homePage.sendSearchText(searchKeyword);
         homePage.clickSearch();
         searchPage.clickBrandFilter();

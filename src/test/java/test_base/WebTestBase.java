@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
+import web_ui.HomePage;
 
 import java.time.Duration;
 
@@ -32,7 +33,7 @@ public class WebTestBase {
         webDriver.manage().window().maximize();
         webDriver.navigate().to(SiteConstants.baseUrl);
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-
+        new HomePage(webDriver).dismissInitialPopups();
     }
 
     @AfterSuite
