@@ -69,7 +69,7 @@ public class SearchWithFilterTest extends WebTestBase {
             Assert.assertTrue(productName.contains(searchPage.selectAppleBrandFilter().getAttribute("innerText")));
 
             //print all products price
-            System.out.println(productPrice); //print all products price
+            System.out.println(productPrice);
             //Assert that all Product's price is displayed
             Assert.assertTrue(priceElement.isDisplayed());
             // Assert that the product price is within the range
