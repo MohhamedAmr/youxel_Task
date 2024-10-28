@@ -40,7 +40,7 @@ public class HomePage extends WebPageBase {
     }
 
 
-    public void clickDismissPopupButton() {
+    public void clickDismissNewsLetterPopup() {
         try {
             new ExplicitDriverWait(webDriver).waitUntilElementAppear(10, dismissPopupButton);
             if (webDriver.findElement(dismissPopupButton).isDisplayed()) {
@@ -69,7 +69,7 @@ public class HomePage extends WebPageBase {
     }
 
     public void dismissInitialPopups(){
-        clickDismissPopupButton();
+        clickDismissNewsLetterPopup();
         clickAcceptCookiesBtn();
     }
 
